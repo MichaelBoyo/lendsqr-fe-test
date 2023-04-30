@@ -1,0 +1,21 @@
+.user {
+  display: flex;
+  margin: 2%;
+  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+  &_data {
+    width: 100%;
+    font-size: 12px;
+
+    border: solid 3px black;
+  }
+  &_username {
+    width: 100%;
+    font-size: 12px;
+    margin-left: 21px;
+  }
+  &_email {
+    width: 100%;
+    font-size: 12px;
+    margin-left: 15px;
+  }
+}

@@ -1,0 +1,10 @@
+.users {
+  // background-color: red;
+  margin: 2%;
+  &_stat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+}

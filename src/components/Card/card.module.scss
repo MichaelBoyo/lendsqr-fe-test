@@ -1,0 +1,24 @@
+.card {
+  width: 240px;
+  height: 160px;
+  background: #ffffff;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  margin: 2%;
+
+  &_icon {
+    margin: 8% 0% 0% 8%;
+  }
+  &_title {
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 8%;
+  }
+  &_value {
+    margin-left: 8%;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}

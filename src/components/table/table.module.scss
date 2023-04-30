@@ -1,0 +1,20 @@
+.table {
+  background-color: white;
+  &_header {
+    display: flex;
+    align-content: space-around;
+    width: 100%;
+    &_content {
+      display: flex;
+      margin: 2%;
+      margin-right: 5%;
+      margin-bottom: 0;
+
+      &_name {
+        margin-right: 5px;
+        font-size: 12px;
+      }
+     
+    }
+  }
+}
