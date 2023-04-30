@@ -3,6 +3,7 @@
   flex-direction: row;
   height: 6.94%;
   justify-content: space-around;
+  background-color: white;
 
   &_logo {
     margin: 2%;
@@ -31,7 +32,7 @@
       border-bottom-right-radius: 20%;
     }
   }
-  &_bell{
+  &_bell {
     margin-left: -7%;
   }
 
@@ -44,7 +45,6 @@
     &_avatar {
       border-radius: 50%;
       margin-right: 7%;
-    
     }
     &_name {
       margin-right: 4%;

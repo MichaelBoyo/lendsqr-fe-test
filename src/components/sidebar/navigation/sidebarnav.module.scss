@@ -1,0 +1,43 @@
+.sidebarNav {
+  display: flex;
+  flex-direction: row;
+  margin-top: -8%;
+  color: #7a8cb1;
+  cursor: pointer;
+  align-items: center;
+
+  &:hover {
+    background-color: #39cdcc0f;
+    color: #213f7d;
+    // margin: 0;
+    margin-left: 0;
+    border-left: 3px solid #39cdcc;
+  }
+  &_active {
+    background-color: #39cdcc0f;
+    color: #213f7d;
+    // margin: 0;
+    margin-left: 0;
+    border-left: 3px solid #39cdcc;
+  }
+
+  p {
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  &_startIcon {
+    margin-left: 13%;
+    margin-right: 4%;
+  }
+  &_endIcon {
+    margin-left: 4%;
+  }
+}
+.header {
+  margin-left: 13%;
+  font-size: 12px;
+  line-height: 14px;
+  margin-bottom: 9%;
+}
