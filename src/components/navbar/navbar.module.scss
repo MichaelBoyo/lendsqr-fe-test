@@ -1,0 +1,53 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  height: 6.94%;
+  justify-content: space-around;
+
+  &_logo {
+    margin: 2%;
+    &_text {
+    }
+    &_img {
+      padding-top: -2%;
+    }
+  }
+
+  &_search {
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    margin-right: 10%;
+
+    &_Input {
+      //   background-color: red;
+      width: 344px;
+    }
+    &_Icon {
+      background-color: #39cdcc;
+      padding: 4% 6% 4% 6%;
+
+      border-top-right-radius: 20%;
+      border-bottom-right-radius: 20%;
+    }
+  }
+  &_bell{
+    margin-left: -7%;
+  }
+
+  &_user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -7%;
+
+    &_avatar {
+      border-radius: 50%;
+      margin-right: 7%;
+    
+    }
+    &_name {
+      margin-right: 4%;
+    }
+  }
+}
