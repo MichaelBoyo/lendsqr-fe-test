@@ -1,5 +1,6 @@
 import Dashboard from "./pages/dashboard/dashboard";
 import Login from "./pages/login/Login";
+
 import Register from "./pages/register/Register";
 
 export const routes = [

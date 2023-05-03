@@ -5,6 +5,7 @@ import headerDropdownIcon from "../../assets/icons/users/headerdropdown.svg";
 import { getUsers } from "../../api";
 import User from "../user/user";
 import moment from "moment";
+import Pagination from "../Pagination/Pagination";
 interface tableheaderprops {
   name: string;
 }
@@ -52,6 +53,18 @@ const tableHeaders: Array<tableheaderprops> = [
 const ONE_YEAR = 365 * 24 * 60 * 60 * 1000;
 const Table: FC = (): JSX.Element => {
   const [users, setUsers] = useState<Array<userProps>>([]);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(5);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = users.slice(indexOfFirstItem, indexOfLastItem);
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(users.length / itemsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await getUsers();
@@ -85,19 +98,19 @@ const Table: FC = (): JSX.Element => {
         ))}
       </div>
       <div className={tableStyle.table_body}>
-        {users.map((user) => (
-          <User
-            key={user.id}
-            id={user.id}
-            phoneNumber={user.phoneNumber}
-            organization={user.organization}
-            email={user.email}
-            username={user.username}
-            status={user.status}
-            dateJoined={user.dateJoined}
-          />
+        {currentItems.map((user) => (
+          <User key={user.id} {...user} />
         ))}
       </div>
+
+      <Pagination
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        lastPage={pageNumbers.length}
+        maxLength={7}
+        setItemsPerPage={setItemsPerPage}
+        itemsPerPage={itemsPerPage}
+      />
     </div>
   );
 };
