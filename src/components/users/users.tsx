@@ -31,12 +31,7 @@ const Users: FC = (): JSX.Element => {
       <p className={usersPageStyle.users_heading}>Users</p>
       <div className={usersPageStyle.users_stat}>
         {stats.map((stat) => (
-          <Card
-            key={stat.title}
-            icon={stat.icon}
-            title={stat.title}
-            value={stat.value}
-          />
+          <Card key={stat.title} {...stat} />
         ))}
       </div>
       <Table />

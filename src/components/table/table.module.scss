@@ -1,20 +1,21 @@
 .table {
   background-color: white;
+  margin-left: 2%;
+  border-radius: 2%;
+  margin-right: 2%;
   &_header {
     display: flex;
-    align-content: space-around;
+    align-content: space-between;
     width: 100%;
     &_content {
       display: flex;
       margin: 2%;
-      margin-right: 5%;
-      margin-bottom: 0;
+      margin-right: 3vw;
 
       &_name {
-        margin-right: 5px;
+        margin-right: 4px;
         font-size: 12px;
       }
-     
     }
   }
 }

@@ -5,6 +5,7 @@ import headerDropdownIcon from "../../assets/icons/users/headerdropdown.svg";
 import { getUsers } from "../../api";
 import User from "../user/user";
 import moment from "moment";
+import { UserResponse } from "../../api";
 import Pagination from "../Pagination/Pagination";
 interface tableheaderprops {
   name: string;
@@ -24,11 +25,11 @@ const checkCondition = (
 ): string => {
   return condition ? result1 : result2;
 };
-const getDate = (data: any): string => {
+const getDate = (data: UserResponse): string => {
   return moment(data.createdAt).format("MMM D YYYY, h:mm:ss A");
 };
 
-const getStatus = (data: any) => {
+const getStatus = (data: UserResponse) => {
   return data.createdAt > data.lastActiveDate
     ? "INACTIVE"
     : checkCondition(
@@ -68,18 +69,23 @@ const Table: FC = (): JSX.Element => {
   useEffect(() => {
     const fetchUsers = async () => {
       const response = await getUsers();
+      if (response === undefined) {
+        return;
+      }
 
-      const fetchedUsers: Array<userProps> = response.map((data: any) => {
-        return {
-          id: data.id,
-          organization: formatName(data.orgName),
-          username: formatName(data.userName),
-          email: formatName(data.email),
-          phoneNumber: formatName(data.phoneNumber),
-          status: getStatus(data),
-          dateJoined: getDate(data),
-        };
-      });
+      const fetchedUsers: Array<userProps> = response.map(
+        (data: UserResponse) => {
+          return {
+            id: data.id,
+            organization: formatName(data.orgName),
+            username: formatName(data.userName),
+            email: formatName(data.email),
+            phoneNumber: formatName(data.phoneNumber),
+            status: getStatus(data),
+            dateJoined: getDate(data),
+          };
+        }
+      );
       setUsers(fetchedUsers);
     };
     fetchUsers();
@@ -90,9 +96,7 @@ const Table: FC = (): JSX.Element => {
       <div className={tableStyle.table_header}>
         {tableHeaders.map((header) => (
           <div key={header.name} className={tableStyle.table_header_content}>
-            <p className={tableStyle.table_header_content_name}>
-              {header.name}
-            </p>
+            <p className={tableStyle.table_header_content_name}>{header.name}</p>
             <img src={headerDropdownIcon} alt="table header icon" />
           </div>
         ))}

@@ -1,21 +1,24 @@
 .user {
+  // margin: 2%;
   display: flex;
-  margin: 2%;
-  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
-  &_data {
-    width: 100%;
-    font-size: 12px;
+  width: 100%;
+  justify-content: space-between;
 
-    border: solid 3px black;
-  }
-  &_username {
+  font-family: "Work Sans", sans-serif;
+  font-style: normal;
+  border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+
+  &_data {
+    margin: 2%;
+    font-size: 10.3px;
     width: 100%;
-    font-size: 12px;
-    margin-left: 21px;
+
+    &_bg{
+      background-color: red;
+    }
   }
-  &_email {
-    width: 100%;
-    font-size: 12px;
-    margin-left: 15px;
+
+  &_info {
+    margin-right: 2%;
   }
 }

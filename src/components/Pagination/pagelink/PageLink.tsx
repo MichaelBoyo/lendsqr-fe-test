@@ -5,7 +5,6 @@ import pagelinkStyle from "./pagelink.module.scss";
 export type Props = HTMLProps<HTMLAnchorElement> & { active?: boolean };
 
 export default function PageLink({
-  className,
   active,
   disabled,
   children,
@@ -14,11 +13,7 @@ export default function PageLink({
   let classname = pagelinkStyle.pagelink;
 
   if (disabled) {
-    return (
-      <span className={classname}>
-        {children}
-      </span>
-    );
+    return <span className={classname}>{children}</span>;
   }
 
   if (active) classname = pagelinkStyle.pagelink_active;
