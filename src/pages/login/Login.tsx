@@ -1,7 +1,8 @@
 import { FC } from "react";
-
+import { useNavigate } from "react-router-dom";
 const Login: FC = (): JSX.Element => {
-  return <div>Login</div>;
+  const navigate = useNavigate();
+  return <button onClick={() => navigate("/dashboard")}>Login</button>;
 };
 
 export default Login;
